@@ -14,6 +14,6 @@ int main() {
 	init_code();
 	int x;
 	cin >> x;
-	cout << "you numbessr" << " " << x;
+	cout << "you nsr" << " " << x;
 	return 0;
 }
