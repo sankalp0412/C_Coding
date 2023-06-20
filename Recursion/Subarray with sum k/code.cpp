@@ -9,36 +9,34 @@ freopen("output.txt", "w", stderr);
 #endif
 }
 
-bool fn(vector<int> &vec, int n,int curr, int sum, int index,vector<int> &temp) {
+int fn(vector<int> &vec, int n,int curr, int sum, int index,vector<int> &temp) {
 	if(index == n) {
 		//condition sattisfied
-		if(curr == sum) {
-			for(auto it: temp) cout << it << " ";
-				cout << endl;
-				return true;
-		}
+		if(curr == sum) 
+			return 1;
 		//not satisfied
-		else return false;
+		else 
+			return 0;
 	}
 	temp.push_back(vec[index]);
 	curr += vec[index];
 	//take
-	if (fn(vec,n,curr,sum,index+1,temp))	
-		return true;
+	int l = fn(vec,n,curr,sum,index+1,temp);	
+
 	curr -= vec[index];
 	temp.pop_back();
 	//not take
-	if(fn(vec,n,curr,sum,index+1,temp))
-		return true;
+	int r = (fn(vec,n,curr,sum,index+1,temp));
 
-	return false;
+	return l+r;
 }
 int main (){
 	init_code();
 	vector<int> vec = {1,2,1}, temp;
 	int sum = 2, index = 0;
 	int n = vec.size();
-	fn(vec,n,0,sum,index,temp);
+	int ans = fn(vec,n,0,sum,index,temp);
+	cout << ans;
 	return 0;
 
 }
@@ -48,6 +46,8 @@ int main (){
 // WE NEED TO END THE RECURSION IMMEDIATELY IF WE GET AN ANSWER SUCH A WAY THAT 
 
 //TRICK TO PRINT ONE ANSWER:
+
+//FUNCTION WILL RETURN A BOOL
 
 //bool F(){
 // BASE CASE:
@@ -61,4 +61,23 @@ int main (){
 
 // F();
 //return false
+// }
+
+
+///////////////////////////////////////
+
+//NOW LETS MODIFY THIS FURTHER AND NOW WE ONLY WANT THE COUNT OF NUMBER SUBSEQUCNE WHOSE SUM IS SUM
+//INT F(){
+// BASE CASE:
+// 	IF CONDITION SATISFIED
+// 		RETURN 1
+// 	ELSE 
+// 		RETURN 0
+
+//if there are two ercursion calls:
+//l =  F();
+//r = f();
+// if there are multiple recusion calls then we can run a for loop and so on
+
+// return l+r
 // }
