@@ -1,0 +1,72 @@
+DIFFERENCE BETWEEN SUBSET AND COMBINATIONS:
+
+Subsets and combinations are both concepts used in mathematics and set theory, but they have different meanings and applications.
+
+Subsets:
+A subset is a collection of elements that are selected from a given set. Every set is considered a subset of itself, and the empty set (∅) is a subset of every set. Subsets can contain any number of elements, including none or all of the elements from the original set. In other words, a subset is formed by selecting some or all of the elements from a set, without any specific ordering or arrangement.
+
+For example, given the set {1, 2, 3}, some of its subsets include:
+
+∅ (empty set)
+{1}
+{2, 3}
+{1, 2}
+{1, 3}
+{1, 2, 3} (the original set)
+Combinations:
+Combinations, on the other hand, refer to the selection of a specific number of elements from a larger set, without regard to the order in which they are selected. Combinations are often used when you want to select a subset of elements for a particular purpose, such as forming a team, choosing a committee, or creating a menu.
+
+For example, if you have a set {A, B, C, D}, some combinations of two elements (2-element combinations) would be:
+
+AB
+AC
+AD
+BC
+BD
+CD
+Combinations differ from subsets because they involve selecting a specific number of elements from a set, whereas subsets can contain any number of elements.
+
+In summary, subsets refer to all possible collections of elements from a set, while combinations specifically involve selecting a predetermined number of elements from a set, without regard to their order.
+------------------------------------------------------------------------------
+
+DIFF BETWEEN PERMUATATIONS AND COMBINATIONS:
+
+No, permutations are different from combinations. Permutations and combinations are both mathematical concepts used to count and arrange elements, but they have distinct meanings and applications.
+
+Permutations:
+Permutations refer to the arrangement of elements from a set in a specific order. In permutations, the order of the elements matters. Each arrangement of the elements is considered a distinct permutation.
+
+For example, given the set {A, B, C}, some permutations of the elements would be:
+
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+In permutations, the number of possible arrangements depends on the number of elements and can be calculated using factorial notation. The number of permutations of n elements taken r at a time is given by n! / (n - r)!, where n! denotes the factorial of n.
+
+Combinations:
+Combinations, as mentioned earlier, involve selecting a specific number of elements from a larger set without regard to the order in which they are selected. In combinations, the order of the elements does not matter. If the same elements are selected, but in a different order, it is still considered the same combination.
+
+For example, considering the set {A, B, C}, some combinations of two elements (2-element combinations) would be:
+
+AB
+AC
+BC
+Combinations are often used when the order of selection is irrelevant, such as when choosing a committee from a group of people or selecting items from a menu.
+
+The number of combinations of n elements taken r at a time can be calculated using the formula n! / (r! * (n - r)!).
+
+In summary, permutations involve arranging elements in a specific order, where the order matters, while combinations involve selecting elements without regard to their order, where the order does not matter.
+
+
+
+
+
+User
+so {A,B} and {B,A} will be differenct permutation but same combination
+ChatGPT
+That's correct. In permutations, the order of the elements matters, so {A, B} and {B, A} would be considered different permutations because the order of the elements is different.
+
+However, in combinations, the order of the elements does not matter. Therefore, {A, B} and {B, A} would be considered the same combination because they contain the same elements, regardless of their order.
