@@ -1,3 +1,18 @@
+A subarray has Order and Continuity. A subsequence has Order but not Continuity. A subset does not Order nor Continuity. Save this answer.
+
+Every Subarray is a Subsequence.
+Every Subsequence is a Subset.
+
+
+
+
+
+
+
+
+
+
+
 DIFFERENCE BETWEEN SUBSET AND COMBINATIONS:
 
 Subsets and combinations are both concepts used in mathematics and set theory, but they have different meanings and applications.
