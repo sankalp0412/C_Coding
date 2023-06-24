@@ -62,3 +62,8 @@ int main() {
  	}
 	return 0;
 }
+
+
+//however this is not an ideal approach, checkn both diagonals and  and left side 
+// is taking time complexity O(n) each, we are also running a O(n) loop at line 54 and 40
+//check code 2 for better hasing approach
