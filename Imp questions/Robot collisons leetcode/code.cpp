@@ -81,7 +81,9 @@ mplace_back() vs push_back()
 
 // Creating the ans vector: This step involves iterating over the stk vector, resulting in a time complexity of O(N).
 
-// Overall, the dominant time complexity in this code is O(N log N) due to the sorting steps.
+// Overall, the dominant time complexity in this code is
+
+// O(N log N) due to the sorting steps.
 
 // Regarding space complexity:
 
