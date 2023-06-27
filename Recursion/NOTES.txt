@@ -1,3 +1,7 @@
+//// in interiew alwas approach with the naive approach first
+
+
+
 A subarray has Order and Continuity. A subsequence has Order but not Continuity. A subset does not Order nor Continuity. Save this answer.
 
 Every Subarray is a Subsequence.
@@ -85,3 +89,6 @@ ChatGPT
 That's correct. In permutations, the order of the elements matters, so {A, B} and {B, A} would be considered different permutations because the order of the elements is different.
 
 However, in combinations, the order of the elements does not matter. Therefore, {A, B} and {B, A} would be considered the same combination because they contain the same elements, regardless of their order.
+
+
+
