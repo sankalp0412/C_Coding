@@ -29,7 +29,7 @@ freopen("output.txt", "w", stderr);
     }
 int main() {
 	init_code();
-	vector<int> nums ={1,2,2};
+	vector<int> nums ={1,1,2};
 	vector<vector<int> > ans;
 	vector<int> temp;
 	solve(0,temp,ans,nums);

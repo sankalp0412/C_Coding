@@ -91,4 +91,12 @@ That's correct. In permutations, the order of the elements matters, so {A, B} an
 However, in combinations, the order of the elements does not matter. Therefore, {A, B} and {B, A} would be considered the same combination because they contain the same elements, regardless of their order.
 
 
+///////////////////////////////////////////
+
+Difference between recursion and backtracking
+
+Recursion describes the calling of the same function that you are in. The typical example of a recursive function is the factorial. You always need a condition that makes recursion stop (base case).
+
+Backtracking is when the algorithm makes an opportunistic decision*, which may come up to be wrong. If the decision was wrong then the backtracking algorithm restores the state before the decision. It builds candidates for the solution and abandons those which cannot fulfill the conditions. A typical example for a task to solve would be the Eight Queens Puzzle. Backtracking is also commonly used within Neuronal Networks. Many times backtracking is not implemented recursively. If backtracking uses recursion its called Recursive Backtracking
+
 
