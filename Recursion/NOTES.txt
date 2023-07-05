@@ -1,6 +1,13 @@
 //// in interiew alwas approach with the naive approach first
 
 
+The time complexity of std::sort() is:
+
+Best Case – O(N log N)
+Average Case – O(N log N)
+Worst-Case – O(N log N)
+Space Complexity: It may use O( log N) auxiliary space.
+
 
 A subarray has Order and Continuity. A subsequence has Order but not Continuity. A subset does not Order nor Continuity. Save this answer.
 
