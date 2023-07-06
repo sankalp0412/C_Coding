@@ -24,7 +24,7 @@ freopen("output.txt", "w", stderr);
                 curr -= nums[i];
                 i++;
                 flag = false;
-            } else { // curr < target and j == n - 1
+            } else { // curr < target and j == n - 1 //we can't add any more so it will just keep on decreasing hence we break
                 break;
             }
         }
