@@ -21,7 +21,6 @@ class DSU{
     void compete(int x, int y) {
         int chefX = findOwner(x);
         int chefY = findOwner(y);
-        if(maxScores[chefX] == maxScores[chefY]) return;
         if(maxScores[chefX] < maxScores[chefY]) //Y chef won
             owners[x] = chefY;
         else 
