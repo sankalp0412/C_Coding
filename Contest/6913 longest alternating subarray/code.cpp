@@ -11,37 +11,27 @@ freopen("output.txt", "w", stderr);
 class Solution {
 public:
     int alternatingSubarray(vector<int>& nums) {
-      int n = nums.size();
-    if (n < 2)
-        return -1;
-
-    int start = 0;  // starting index of the current subarray
-    int prev_diff = 0;  // previous difference between consecutive elements
-    int max_length = -1;  // maximum length of an alternating subarray
-
-    for (int i = 1; i < n; i++) {
-        int curr_diff = nums[i] - nums[i - 1];
-
-        if (prev_diff == 0) {
-            prev_diff = curr_diff;
-        } else if (curr_diff == -prev_diff) {
-            continue;
-        } else {
-            start = i;
-            prev_diff = curr_diff;
+        int ans = INT_MIN;
+        int i = 0, j = 1;
+        for(int k = 0; k < nums.size();k++) {
+            i = k, j = k+1;
+            int tempI = nums[i];
+            int tempJ = nums[j];
+            while(j < nums.size() && (nums[i] + 1 == nums[j]) && (tempI == nums[i]) && tempJ == nums[j]){
+            	i+=2;
+                j+=2;
+            }
+            i-=2;
+            j-=2;
+            ans = max(ans,(j-k)+1);
         }
-
-        int length = i - start + 1;
-        max_length = max(max_length, length);
-    }
-
-    return max_length;
+        return ans;
     }
 };
 int main() {
 	init_code();
 	Solution solution;
-	vector<int> nums = {21,9,5};
+	vector<int> nums = {4,5,6};
 	cout << solution.alternatingSubarray(nums);
 	return 0;
 }
