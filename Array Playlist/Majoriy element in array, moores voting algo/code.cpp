@@ -45,3 +45,12 @@ int main() {
 	cout << majorityElement(nums);
 	return 0;
 }
+
+
+//TC: O(n) for the first loop
+// the second loop only required if 
+// the problem states that there might 
+// not be a maority element
+// in that case we will have to veriy
+
+//SC: O(1)
