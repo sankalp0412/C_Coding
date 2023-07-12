@@ -2,6 +2,7 @@
 // we wll neglect if that sum < 0 as on a large scale
 // if i will inlcude that sum (subarra) it will only make my 
 // total sum less
+//Time Complexity : On
 
 
 #include "bits/stdc++.h"
