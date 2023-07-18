@@ -16,7 +16,7 @@ freopen("output.txt", "w", stderr);
             if(mp.count(str)) ans++;
             else mp[str]++;
         }
-        cout << ans;
+        cout << ans << endl;
     }
 int main() {
 	init_code();
