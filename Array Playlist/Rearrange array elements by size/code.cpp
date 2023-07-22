@@ -36,3 +36,9 @@ int main() {
 		cout << x << endl;
 	return 0;
 }
+
+//brute force was to use two arrays with SC o(n);
+//TC is o(2n) in brute
+
+//now tc is O(n);
+
