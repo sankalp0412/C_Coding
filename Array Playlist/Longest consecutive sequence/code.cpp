@@ -1,3 +1,11 @@
+//OPTIMAL SOLUTION
+//TC: o(N) WORST CASE for set in case of collison
+// the second while loop is not an N iteration
+//as we are not staring from everyone but only from the firs guy
+//O(3n) = O(n)
+
+//SC: O(n)
+
 #include "bits/stdc++.h"
 using namespace std;
 
