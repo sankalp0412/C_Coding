@@ -8,6 +8,8 @@
 // we will start initializing zeros from the last
 // and the first row and column in the last
 
+//TC: 2*n*m
+//SC: O(1)
 
 #include "bits/stdc++.h"
 using namespace std;
