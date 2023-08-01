@@ -23,6 +23,8 @@ void swapIfGreater(vector<int> &a, vector<int> &b , int i, int j) {
 	if(a[i] > b[j])
 		swap(a[i],b[j]);
 }
+
+// TC: log base 2 (n+m)
 void optimal2GapMethod(vector<int> &a, vector<int> &b) {
 	int n = a.size(),m = b.size();
 	int len = n + m;
