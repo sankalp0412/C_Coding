@@ -22,6 +22,9 @@ vector<int> findMissingAndRepeating(vector<int> a) {
 			break;
 	bitNo++;
 	}
+
+	//another way to generate the number with a 1 at the differentiating bit
+	//int number = xr & ~(xr - 1);
 	int zero = 0;
 	int one = 0;
 
@@ -63,3 +66,14 @@ int main() {
 	cout << ans[0] << "," << ans[1];
 	return 0;
 }
+
+// nce the rightmost different (set) bit is found in the binary representation of "xr," you
+ // can use it to split the elements of the "a" vector into two groups based on the value of that particular 
+ // bit. This technique is commonly known as "bit masking" or "bit manipulation."
+
+
+//The expression xr - 1 subtracts 1 from "xr." In binary representation, subtracting 1 from
+ // a number with a rightmost set bit will change that rightmost set bit to 0 and set all the bits
+ //  to the right of it to 1.
+
+// For example, if "xr" is 0b11010000, then "xr - 1" will be 0b11001111
