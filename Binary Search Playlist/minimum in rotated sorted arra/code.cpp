@@ -15,7 +15,12 @@ int findMin(vector<int>& arr) {
         int low = 0, high = arr.size()-1, mid;
         while(low<= high) {
             mid = (low+high)/2;
-            //
+            //if search space is already sorted
+            //arr of low will always be lower than any other element
+            if(arr[low] <= arr[high]) {
+                ans = min(ans,arr[low]);
+                break;
+            }
             if(arr[mid] < arr[high]){ // right part is sorted
                 ans = min(ans,arr[mid]);
                 high = mid -1;
@@ -43,3 +48,22 @@ int main() {
 // here if the right part is sorted than i only need to compare with the
 // lowest value in the right half that is mid
 // similarliy for the left half will will compare with low/
+
+
+//optimization :::
+
+// if for an array both the left half and the right half are sorted:
+// eg: [4,5,6 ,0,1,2]
+
+
+//first we compare mid with left half and ans = 4;
+// now we are left with [0,1,2]
+
+//here both the left half and the right half are sorted:
+//i.e arr[low] <= mid && arr[mid] <= arr[high]
+
+//which togerther we can right as arr[low] <= arr[high]
+
+//this only happens when we cross the point of rotation, on either side.
+
+//so we can use the above condition to break
