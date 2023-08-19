@@ -10,7 +10,6 @@ freopen("output.txt", "w", stdout);
 freopen("output.txt", "w", stderr);
 #endif
 }
-
 int main() {
 	init_code();
 	return 0;
