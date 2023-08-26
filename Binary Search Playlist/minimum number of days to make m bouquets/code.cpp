@@ -24,7 +24,7 @@ bool possible(vector<int> &vec, int day, int k, int m){
 	return numOfBouquets >= m;
 }
 int minDays(vector<int> &vec, int m, int k) {
-	if(m * k > vec.size()) return -1;
+	if(m * 1ll * k * 1ll> vec.size()) return -1; //important thing to take care , we have to muliply with 1ll to avoid overflow
 	int minD = *min_element(vec.begin(),vec.end());
 	int maxD = *max_element(vec.begin(),vec.end());
 
