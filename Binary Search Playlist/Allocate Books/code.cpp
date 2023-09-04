@@ -47,3 +47,7 @@ int main() {
 }
 
 //tc: O(log(sum - max(arr) + 1) * O(n));
+
+//this question is same as 
+	// 1) Painters partition Coding ninjas
+	// 2) leet code 410 Split array largest sum
