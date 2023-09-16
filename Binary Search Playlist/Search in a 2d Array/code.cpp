@@ -33,8 +33,8 @@ bool searchMatrix(vector<vector<int>> matrix, int target) {
 	return false;
 }
 int searchMatrixOptimal(vector<vector<int>> matrix, int &target) {
-	int n = matrix.size();
-	int m = matrix[0].size();
+	int m = matrix.size();
+	int n = matrix[0].size();
 
 	int low = 0, high = (n*m) - 1;
 
@@ -44,7 +44,7 @@ int searchMatrixOptimal(vector<vector<int>> matrix, int &target) {
 	
 		i = mid / n;
 		j = mid % n;
-		
+
 		if(matrix[i][j] == target)
 			return true;
 		else if (matrix[i][j] < target) 
