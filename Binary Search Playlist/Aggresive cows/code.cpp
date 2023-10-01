@@ -1,3 +1,5 @@
+// this question is similar to leet code 1552, magnetic force between balls
+
 #include "bits/stdc++.h"
 using namespace std;
 
