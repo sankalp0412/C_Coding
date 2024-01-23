@@ -63,3 +63,13 @@ int main() {
 // when updating the vec array.
 
 // so that we don't consider the element we just pushed
+
+
+
+//he size of the dp array can grow as new elements are added during the 
+// iteration. The worst-case scenario is that each string contributes a new 
+// element to the dp array in each iteration of the outer loop. In this case,
+ // the overall time complexity would be 
+// O(N) where N is the total number of characters in all strings
+
+// the overall space complexity is O(N).
