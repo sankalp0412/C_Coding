@@ -1,4 +1,5 @@
 Kosaraju Algo for strongly connected components
 Bitmask Questions
+Trie
 
 Largest Submatrix With Rearrangements - Leetcode
