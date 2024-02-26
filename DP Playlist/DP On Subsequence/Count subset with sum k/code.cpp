@@ -16,11 +16,10 @@ freopen("output.txt", "w", stderr);
 int mod = 1e9 + 7;
 int dp[1001][1001];
 int solve(int idx, int k, vector<int> &arr) {
-	if(idx == 0){
-		if(k == 0)
-			return 1;
-		else 	
-			return arr[0] == k;
+		if(idx == 0){
+		if(k == 0 && arr[0] == 0) return 2;
+		if(k == 0 || k == arr[0]) return 1;
+		return 0;
 }
 	if(dp[idx][k] != -1) //means the number of sustet till index idx(from 0 - idx) that will give the sum k
 		return dp[idx][k];
