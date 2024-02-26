@@ -34,8 +34,10 @@ int solve(int idx, int k, vector<int> &arr) {
 int solTabulation( vector<int> &arr, int k){
 	int n = arr.size();
 	vector<vector<int>> dp(n,vector<int> (k + 1,0));
-	dp[0][0] = 1;
-	if(arr[0] <= k) dp[0][arr[0]] = 1;
+	if(num[0] == 0) dp[0][0] = 2; //as if 0th index is 0 we have two ways neither taking or not taking won't effet the sum
+	else dp[0][0] = 1;
+
+	if(num[0] != 0 && arr[0] <= k) dp[0][arr[0]] = 1;
 	
 
 	for(int i = 1; i < n; i++){
