@@ -10,12 +10,29 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+
 void init_code() {
 #ifndef ONLINE_JUDGE
 freopen("input.txt", "r", stdin);
 freopen("output.txt", "w", stdout);
 freopen("output.txt", "w", stderr);
 #endif
+}
+string printLCS(vector<vector<int>> dp, string s, string t) {
+	int i = dp.size()-1, j = dp[0].size() - 1;
+	string ans = "";
+	while(i > 0 && j > 0) {
+		if(s[i-1] == t[j-1]){
+			ans += s[i-1];
+			i--;j--;
+		}
+		else if(dp[i-1][j] > dp[i][j-1])
+				i--;
+			else 
+				j--;
+	}
+	reverse(ans.begin(),ans.end());
+	return ans;
 }
 int solveMemo(string text1, string text2, int i, int j,vector<vector<int>> &memo) {
 	if(i < 0 || j < 0) return 0;
@@ -42,6 +59,7 @@ int solveTabulation(string text1, string text2) {
 				dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
 		}
 	}
+	cout << printLCS(dp,text1,text2) << endl;
 	return dp[n1][n2];
 
 }int solveSpaceOptm(string text1, string text2) {
@@ -67,8 +85,8 @@ int longestCommonSubsequence(string text1, string text2) {
 	int n1 = text1.size(),n2 = text2.size();
 	vector<vector<int>> memo(n1, vector<int> (n2,-1));
 	// return solveMemo(text1,text2,n1-1,n2-1,memo);
-	// return solveTabulation(text1,text2);
-	return solveSpaceOptm(text1,text2);
+	return solveTabulation(text1,text2);
+	// return solveSpaceOptm(text1,text2);
 }
 
 int main() {
