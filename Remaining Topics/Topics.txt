@@ -3,3 +3,13 @@ Bitmask Questions
 Trie
 
 Largest Submatrix With Rearrangements - Leetcode
+
+
+
+walls and gates (leetcode premium so use below neetcode link) - multi source bfs
+this is pre req for the question 
+Find the Safest Path in a Grid --- vvvvvv imp
+
+and related to path with minimum effort and  Swim in Rising Water
+
+https://neetcode.io/problems/islands-and-treasure

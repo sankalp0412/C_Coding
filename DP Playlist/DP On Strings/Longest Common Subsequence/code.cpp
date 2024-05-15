@@ -1,6 +1,6 @@
 //Brute force will be exponential in nature, as we will search and check for all subsequences
 // We will try to write some recurrenec that will give me answer through the way
-// F[i] Means string till lenght 2
+// F[i] Means string till lenght i
 // A single index cannot represent both strings, hence we will need two indexes
 // so F[2][2] will mean lcs of string 1 (0-2) string 2(0-2)
 // Recursion : O(n) = 2^n * 2^m
