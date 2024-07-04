@@ -85,6 +85,21 @@ vector<int> printLIS(vector<int> &nums) {
 	reverse(lis.begin(),lis.end());
 	return lis;
 }
+
+int solveBS(vector<int> &nums ){ 
+	vector<int> temp;
+	temp.push_back(nums[0]);
+	int n = nums.size();
+	for(int i = 1; i < n; i++) {
+		if(nums[i] > temp.back())	
+		    temp.push_back(nums[i]);
+	else {
+			int ind = lower_bound(temp.begin(),temp.end(),nums[i]) - temp.begin();
+			temp[ind] = nums[i];
+		}
+    }
+	return temp.size(); //not the LIS, only the size, we are using the same array to replicate
+}
 int lengthOfLIS(vector<int>& nums) {
     int n = nums.size();
     vector<vector<int>> dp(n,vector<int> (n+1,-1));
