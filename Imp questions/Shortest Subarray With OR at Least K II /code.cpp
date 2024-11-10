@@ -49,6 +49,6 @@ freopen("output.txt", "w", stderr);
 int main() {
 	init_code();
 	vector<int> nums = {3,2,1,5};
-	cout << minimumSubarrayLength(nums,)
+	cout << minimumSubarrayLength(nums,6);
 	return 0;
 }
