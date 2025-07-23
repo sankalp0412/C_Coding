@@ -1,6 +1,5 @@
 Remaining Topics/
 Main.cpp
-input.txt
 define.cpp
 abc.cpp
 output.txt
@@ -11,5 +10,7 @@ contest.cpp
 taktile
 output.txt
 code.dsYM
-code.exe
 .vscode
+a.out
+code
+.DS_Store
