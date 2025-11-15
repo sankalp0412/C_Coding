@@ -1,4 +1,5 @@
 Remaining Topics/
+temp.dSYM/
 Main.cpp
 define.cpp
 abc.cpp
@@ -14,3 +15,5 @@ code.dsYM
 a.out
 code
 .DS_Store
+temp.cpp
+temp
