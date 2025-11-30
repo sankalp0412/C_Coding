@@ -62,7 +62,10 @@ public:
             if( n== k) 
                 return curr -> val;
 
+            curr = curr -> right;
         }
+
+    return -1;
     }
 };
 int main() {

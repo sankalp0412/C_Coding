@@ -1,3 +1,17 @@
+/* If one half is sorted and the other is “rotated / unsorted”, then minimum must lie in the rotated half (unless sorted half end < start) — you can discard the sorted half.
+
+This discarding shrinks search space by half — giving log N complexity.
+
+That’s the core binary-search logic over “rotated sorted array.”
+
+Edge cases: duplicates (if considered), small size (1 or 2 elements), full sorted (no rotation) – treat separately or carefully.
+
+Need to ensure comparisons don’t break when bounds wrap around.
+
+If array not rotated (i.e. last element > first), then first is minimum.
+*/
+
+
 #include "bits/stdc++.h"
 using namespace std;
 
