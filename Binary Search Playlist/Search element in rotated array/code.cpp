@@ -20,9 +20,11 @@ int search(vector<int>& nums, int target) {
             //check which half is sorted;
             if(nums[low] <= nums[mid]) { //left half is sorted
                 if(nums[low] <= target && nums[mid] >= target) {
+                    //left half is sorted and the element is in that half
                     high = mid -1;
                 }
                 else {
+                    //left half is sorted and hte element is not in that half
                     low = mid + 1;
                 }
             }
