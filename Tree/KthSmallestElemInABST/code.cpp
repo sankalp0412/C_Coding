@@ -8,81 +8,78 @@ freopen("output.txt", "w", stdout);
 freopen("output.txt", "w", stderr);
 #endif
 }
- struct TreeNode {
-        int val;
-        TreeNode* left;
-        TreeNode* right;
-        TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-    };
-
-    //better using O(1) space:
-    // void dfs(TreeNode* root , int k, int &ans, int &cnt) {
-    //     if (!root )return;
-    //     dfs(root -> left,k,ans,cnt);
-    //     cnt += 1;
-    //     if(cnt == k) {
-    //         ans = root -> val;
-    //         return ;
-    //     }
-    //     dfs(root -> right,k,ans,cnt);
-    // } 
-    // int kthSmallest(TreeNode* root, int k) {
-    //     int ans = -1, cnt= 0;
-    //     dfs(root, k,ans,cnt);
-    //     return ans;
-    // }
 class Solution {
 public:
-    void fn(TreeNode* root, vector<int> &inorder) {
-        if(!root) return;
-        fn(root -> left, inorder);
-        inorder.push_back(root -> val);
-        fn(root -> right, inorder);
-
-        return;
+    bool diffByOne(string a, string b) {
+        int binA = 0, binB = 0;
+        for(int i = 0; i < a.size(); i++) {
+            auto curr = a[i];
+            int shifts = curr - 'a';
+            binA |= 1 << shifts;
+        }
+        for(int i = 0; i < b.size(); i++) {
+            auto curr = b[i];
+            int shifts = curr - 'a';
+            binB |= 1 << shifts;
+        }
+        
+        auto res = binA ^ binB;
+        return __builtin_popcount(res) == 2;
     }
-    int kthSmallest(TreeNode* root, int k) {
-        vector<int> inorder;
-        fn(root, inorder);
-        return inorder[k-1];
-    }
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        unordered_map<string,int> mp;
+        for(auto &word: wordList)
+            mp[word] = -1;
+        
+        if(!mp.count(endWord)) return 0;
+        
+        if(!mp.count(beginWord))
+        wordList.push_back(beginWord);
+        
+        int n = wordList.size();
+        unordered_map<string,vector<string>> graph;
+        for(int i = 0; i < n; i++) {
+            for(int j = i+1; j < n; j++) {
+                string u = wordList[i];
+                string v = wordList[j];
 
-    int kthSmallesIterative(TreeNode* root ,int k) {
-        stack<TreeNode*> st;
-        int n = 0;
-        auto curr = root;
-        while(curr && !st.empty()) {
-            while(curr) {
-                st.push(curr); 
-                curr = curr -> left;
+                if(diffByOne(u,v)){
+                    graph[u].push_back(v);
+                    graph[v].push_back(u);
+                }
             }
-            curr = st.top();
-            st.pop();
-            n += 1;
-            if( n== k) 
-                return curr -> val;
+        }
+        for (auto &entry : graph) {
+            cout << entry.first << ": ";
+            for (auto &neighbor : entry.second) {
+            cout << neighbor << " ";
+            }
+            cout << endl;
+        }
+        queue<pair<string,int>> q;
+        q.push({beginWord,1});
+        while(!q.empty()) {
+            auto currWord = q.front().first;
+            auto length = q.front().second;
+            q.pop();
+            if(currWord == endWord) return length;
+            mp[currWord] = 1; //visited
+            for(auto &adjWord: graph[currWord]) {
+                if(mp[adjWord] == -1) {
+                    //we havet explored this word yet
+                    q.push({adjWord,length+1});
+                }
+            }
 
-            curr = curr -> right;
         }
 
-    return -1;
+        return 0;
     }
 };
 int main() {
 	init_code();
-    // Define the structure of a TreeNode
-   
-
-    // Create the tree root = [3,1,4,null,2]
-    TreeNode* root = new TreeNode(3);
-    root->left = new TreeNode(1);
-    root->right = new TreeNode(4);
-    root->left->right = new TreeNode(2);
-
-    int k = 1; // k = 1
-
     Solution sol;
-    int ans = sol.kthSmallest(root,k);
-    cout << ans;
-	return 0;
+    vector<string> wordList = {"most", "mist", "miss", "lost", "fist", "fish"};
+    int ans = sol.ladderLength("lost","miss",wordList);
+    return 0;
 }
