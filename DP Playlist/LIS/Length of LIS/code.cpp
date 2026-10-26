@@ -23,6 +23,8 @@ int solve(int prev, int idx, vector<int> &nums , int &n,vector<vector<int>> &dp)
 int solveTabulation(vector<int> &nums) {
     int n = nums.size();
     vector<vector<int>> dp(n+1,vector<int> (n+1,0));
+	//the length of the longest increasing subsequence we can build starting from
+	//  index i, where j represents the index of the previously selected element
     for(int idx = n-1; idx >= 0; idx--) {
     	for(int prev = idx-1; prev >= -1; prev--) {
     		int len = 0 + dp[idx+1][prev+1];
@@ -47,7 +49,7 @@ int spaceOptm(vector<int> &nums) {
     }
     return next[0];
 }
-int anotherWay(vector<int> &nums) { //this was is required to print the LIS
+int anotherWay(vector<int> &nums) { //this  is required to print the LIS
 	int n = nums.size();
 	vector<int> dp(n,1);
 	for(int i = 1; i < n; i++) {

@@ -116,3 +116,41 @@ int main() {
 // area = 1 * (n - 0) = 6
 
 //neither is greater than 10 
+
+
+
+//more intutive , check notion
+class Solution {
+public:
+    int largestRectangleArea(vector<int>& heights) {
+        int n = heights.size();
+        stack<pair<int,int>> st;
+        int ans = 0;
+        for(int i = 0; i < n; i++) {
+            int currHeight = heights[i];
+            while(!st.empty() && currHeight < st.top().second) {
+                int rightBound = i;
+                int potentialHeight = st.top().second;
+                st.pop();
+                int leftBound = st.empty() ? -1 : st.top().first;
+
+                int area = potentialHeight * (rightBound - leftBound - 1);
+
+                ans = max(ans, area);
+            }
+            st.push({i,currHeight});
+        }
+
+        //reamining
+        int rightBound = n;
+        while(!st.empty()) {
+            int potentialHeight = st.top().second;
+            st.pop();
+            int leftBound = st.empty() ? -1 : st.top().first;
+            int area = potentialHeight * (rightBound - leftBound - 1);
+
+            ans = max(ans, area);
+        }
+        return ans;
+    }
+};
